@@ -13,6 +13,9 @@ dependencies:
   vue:
     specifier: ^3.2.47
     version: 3.2.47
+  vue-draggable-plus:
+    specifier: ^0.0.3
+    version: 0.0.3
 
 devDependencies:
   '@rushstack/eslint-patch':
@@ -4053,6 +4056,15 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.47
+
+  /vue-draggable-plus@0.0.3:
+    resolution: {integrity: sha512-hP6MDwu5coBnwK/oPPy4e+cpxs5z4+iAyVbbseFmcXGbGqDlkHOwoMQEv+j5lAoZIq9dMzB0DP+hBXuvdEEnxQ==}
+    peerDependencies:
+      '@vue/composition-api': '*'
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dev: false
 
   /vue-eslint-parser@9.1.0(eslint@8.34.0):
     resolution: {integrity: sha512-NGn/iQy8/Wb7RrRa4aRkokyCZfOUWk19OP5HP6JEozQFX5AoS/t+Z0ZN7FY4LlmWc4FNI922V7cvX28zctN8dQ==}

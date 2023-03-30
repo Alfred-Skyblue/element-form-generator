@@ -27,6 +27,8 @@ export function vitePlugins(): PluginOption[] {
     }),
     Components({
       resolvers: [ElementPlusResolver()],
+      include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/],
+      exclude: ['src/components/**/components/**'],
       dirs: ['src/components'],
       dts: 'src/typings/components.d.ts'
     })
