@@ -1,9 +1,10 @@
-import type { IAnyObject } from '@/types'
+import type { IAnyObject, IFormItem } from '@/types'
 
-export interface IComponent extends IAnyObject {
+export interface IComponent extends Partial<IFormItem>, IAnyObject {
   label: string
   tag: string
   icon: string
+  props?: IAnyObject
 }
 
 export const inputComponents: IComponent[] = [
@@ -13,7 +14,8 @@ export const inputComponents: IComponent[] = [
     icon: 'input',
     props: {
       placeholder: '请输入'
-    }
+    },
+    _config: 'GInputProps'
   },
   {
     label: '多行文本',
@@ -26,24 +28,16 @@ export const inputComponents: IComponent[] = [
         minRows: 4,
         maxRows: 4
       }
-    }
-  },
-  {
-    label: '密码',
-    tag: 'el-input',
-    icon: 'input',
-    props: {
-      type: 'password',
-      placeholder: '请输入'
-    }
+    },
+    _config: 'GTextareaProps'
   },
   {
     label: '数字输入',
     tag: 'el-input-number',
     icon: 'input',
     props: {
-      type: 'password',
       placeholder: '请输入'
-    }
+    },
+    _config: 'GInputNumberProps'
   }
 ]

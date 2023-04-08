@@ -1,5 +1,5 @@
 <template>
-  <li class="draggable-item truncate">
+  <li class="draggable-item truncate" @click="addFormItem(item)">
     <el-text>
       <g-icon :type="item.icon" class="mr-3" />
       <span>{{ item.label }}</span>
@@ -10,11 +10,13 @@
 <script lang="ts" setup name="ComponentItem">
 import type { IComponent } from '@/config/components'
 import GIcon from '@/components/GIcon/index.vue'
+import { useFormConfig } from '@/store'
 
 interface Props {
   item: IComponent
 }
 defineProps<Props>()
+const { addFormItem } = useFormConfig()
 </script>
 
 <style lang="scss" scoped>

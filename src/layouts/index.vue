@@ -10,18 +10,20 @@
       <!--<editor-fold desc="主内容区域">-->
       <el-container class="h-full gap-x-10">
         <!--<editor-fold desc="左侧待拖拽组件列表">-->
-        <el-aside class="h-full border" width="260px">
+        <el-aside class="h-full shadow-container" width="260px">
           <slot name="list"></slot>
         </el-aside>
         <!--</editor-fold>-->
 
         <!--<editor-fold desc="设计器区域">-->
-        <el-container class="h-full flex-col">
+        <el-container class="h-full flex-col shadow-container">
           <!--<editor-fold desc="工具栏">-->
-          <div class="h-30"><slot name="toolbar"></slot></div>
+          <div class="px-20 h-40 g-toolbar flex-y-center">
+            <slot name="toolbar"></slot>
+          </div>
           <!--</editor-fold>-->
           <!--<editor-fold desc="主内容区域默认插槽">-->
-          <el-main class="bg-green-700">
+          <el-main style="--el-main-padding: 0">
             <slot></slot>
           </el-main>
           <!--</editor-fold>-->
@@ -29,7 +31,7 @@
         <!--</editor-fold>-->
 
         <!--<editor-fold desc="右侧组件配置区域">-->
-        <el-aside class="h-full bg-indigo-800" width="300px">
+        <el-aside class="h-full shadow-container" width="300px">
           <slot name="config"></slot>
         </el-aside>
         <!--</editor-fold>-->
@@ -40,3 +42,12 @@
 </template>
 
 <script lang="ts" setup></script>
+
+<style lang="scss" scoped>
+.shadow-container {
+  box-shadow: 0 0 1px 1px #ccc;
+}
+.g-toolbar {
+  border-bottom: 2px solid #ccc;
+}
+</style>

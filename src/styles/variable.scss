@@ -1,3 +1,4 @@
 :root {
-  --primary-color: #1890ff;
+  --primary-color: var(--el-color-primary);
+  --hover-color: rgba(97, 178, 255, 0.27);
 }
