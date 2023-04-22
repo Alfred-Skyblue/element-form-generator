@@ -1,10 +1,12 @@
 <template>
   <div>
-    <component
-      v-if="currentItem"
-      :is="currentItem._config"
-      v-model="currentItem.props"
-    ></component>
+    <el-form label-width="80">
+      <component
+        v-if="currentItem"
+        :is="currentItem._config"
+        v-model="currentItem.props"
+      ></component>
+    </el-form>
   </div>
 </template>
 

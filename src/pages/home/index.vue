@@ -1,5 +1,5 @@
 <template>
-  <GLayout>
+  <GLayout class="select-none">
     <template #header>
       <el-text>表单设计器</el-text>
     </template>

@@ -11,7 +11,6 @@ export function loadComponents(app: App) {
   Object.keys(modules).forEach(key => {
     // @ts-ignore
     const component = modules[key].default
-    console.log('-> component', component)
     app.component(component.name, component)
   })
 }

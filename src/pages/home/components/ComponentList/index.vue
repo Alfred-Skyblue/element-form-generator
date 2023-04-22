@@ -1,8 +1,8 @@
 <template>
-  <el-collapse>
-    <el-collapse-item>
+  <el-collapse v-model="activeNames">
+    <el-collapse-item name="1">
       <template #title>
-        <span class="ml-10">输入组件</span>
+        <span class="ml-10">普通组件</span>
       </template>
       <VueDraggable
         class="grid grid-cols-2 gap-4 p-5"
@@ -24,18 +24,16 @@
 
 <script lang="ts" setup>
 import ComponentItem from '@/pages/home/components/ComponentList/components/ComponentItem.vue'
-import { inputComponents } from '@/config/components'
-import type { IFormItem } from '@/types'
-import { generateUUID } from '@/utils'
+import { basicComponents } from '@/config/components'
+import { useFormConfig } from '@/store'
 import { cloneDeep } from 'lodash-es'
 import { VueDraggable } from 'vue-draggable-plus'
 defineOptions({
   name: 'ComponentList'
 })
-const inputs = ref(cloneDeep(inputComponents))
+const inputs = ref(cloneDeep(basicComponents))
 
-function clone(element: IFormItem) {
-  const newElement = cloneDeep(element)
-  return { ...newElement, _id: generateUUID() }
-}
+const { clone } = useFormConfig()
+
+const activeNames = ref(['1'])
 </script>

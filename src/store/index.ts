@@ -1,12 +1,14 @@
+import { baseAttrs } from '@/config/components'
+import { useFormLocalStorage } from '@/hooks/useFormLocalStorage'
 import type { IFormAttributes, IFormGenerator, IFormItem } from '@/types'
 import { generateUUID } from '@/utils'
+import { cloneDeep } from 'lodash-es'
 import { defineStore } from 'pinia'
 import type { Ref } from 'vue'
-const LOCAL_KEY = 'form-generator-config'
 
 export const useFormConfig = defineStore('form-config', () => {
   // @ts-ignore
-  const formConfig: Ref<IFormGenerator> = ref({
+  const formConfig: Ref<IFormGenerator> = useFormLocalStorage({
     formProps: { model: {}, labelWidth: 80 },
     formItems: [],
     currentItem: null
@@ -58,14 +60,7 @@ export const useFormConfig = defineStore('form-config', () => {
    * @param {IFormItem} item
    */
   function handleSelect(item: IFormItem) {
-    const curItem = formConfig.value.formItems.find(c => c._id === item._id)
-    Promise.resolve()
-      .then(() => {
-        formConfig.value.currentItem = curItem!
-      })
-      .then(() => {
-        console.log('curItem', formConfig.value.currentItem === curItem)
-      })
+    formConfig.value.currentItem = item
   }
 
   /**
@@ -78,14 +73,23 @@ export const useFormConfig = defineStore('form-config', () => {
   }
 
   /**
+   * 克隆表单项
+   * @param {IFormItem} element
+   * @returns {any}
+   */
+  function clone(element: IFormItem) {
+    const newElement = cloneDeep(element)
+    const _id = generateUUID()
+    const field = _id.split('-')[0]
+    return { ...newElement, ...baseAttrs, _id, field }
+  }
+
+  /**
    * 添加表单项
    * @param {IFormItem} item
    */
   function addFormItem(item: IFormItem) {
-    const newItem = {
-      ...item,
-      _id: generateUUID()
-    }
+    const newItem = clone(item)
     formConfig.value.formItems.push(newItem)
     handleSelect(newItem)
   }
@@ -95,6 +99,7 @@ export const useFormConfig = defineStore('form-config', () => {
     formConfig,
     handleSelect,
     clear,
+    clone,
     remove,
     addFormItem,
     formItems,

@@ -78,6 +78,10 @@ export interface IFormItem extends IAnyObject {
   tag: string
   // 表单配置组件
   _config?: string
+  // 表单栅格数
+  span?: number
+
+  _slots?: IAnyObject
 }
 
 export interface IFormGenerator {
