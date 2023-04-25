@@ -16,7 +16,7 @@
         <!--</editor-fold>-->
 
         <!--<editor-fold desc="设计器区域">-->
-        <el-container class="h-full flex-col shadow-container">
+        <el-container class="h-full !flex-col shadow-container">
           <!--<editor-fold desc="工具栏">-->
           <div class="px-20 h-40 g-toolbar flex-y-center">
             <slot name="toolbar"></slot>

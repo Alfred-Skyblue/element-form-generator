@@ -55,7 +55,7 @@ export interface IFormItem extends IAnyObject {
   // 表单域标签宽度
   labelWidth?: string
   // 表单组件属性
-  props?: IAnyObject
+  props: IAnyObject
   // 是否必填
   required?: boolean
   // 表单校验规则

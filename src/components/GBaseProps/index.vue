@@ -15,7 +15,7 @@
     <el-slider v-model="currentItem.span" :marks="marks" :min="0" :max="24" />
   </el-form-item>
   <el-form-item label="标签宽度">
-    <el-input-number v-model="currentItem.labelWidth"></el-input-number>
+    <el-input-number v-model="currentItem.labelWidth" :min="0"></el-input-number>
   </el-form-item>
 </template>
 

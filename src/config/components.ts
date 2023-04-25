@@ -61,7 +61,13 @@ export const basicComponents: IComponent[] = [
     tag: 'el-select',
     icon: 'select',
     props: {
-      placeholder: '请选择'
+      placeholder: '请选择',
+      options: [
+        {
+          label: '选项一',
+          value: 'value1'
+        }
+      ]
     },
     _config: 'GSelectProps'
   }

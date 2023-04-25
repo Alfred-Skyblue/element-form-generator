@@ -39,7 +39,10 @@ const formItems = ref([
   {
     tag: 'el-input-number',
     label: '标签宽度',
-    key: 'labelWidth'
+    key: 'labelWidth',
+    props: {
+      min: 0
+    }
   },
   {
     tag: 'el-switch',
