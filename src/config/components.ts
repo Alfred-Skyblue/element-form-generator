@@ -70,5 +70,165 @@ export const basicComponents: IComponent[] = [
       ]
     },
     _config: 'GSelectProps'
+  },
+  {
+    label: '树形选择',
+    tag: 'el-tree-select',
+    icon: 'tree-select',
+    props: {
+      placeholder: '请选择',
+      options: [
+        {
+          label: '选项一',
+          value: 'value1',
+          children: [
+            {
+              label: '选项一-1',
+              value: 'value1-1'
+            }
+          ]
+        }
+      ]
+    },
+    _config: 'GTreeSelectProps'
+  },
+  {
+    label: '级联选择',
+    tag: 'el-cascader',
+    icon: 'cascader',
+    props: {
+      placeholder: '请选择',
+      options: [
+        {
+          label: '选项一',
+          value: 'value1',
+          children: [
+            {
+              label: '选项一-1',
+              value: 'value1-1'
+            }
+          ]
+        }
+      ]
+    },
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '日期选择',
+    tag: 'el-date-picker',
+    icon: 'date-picker',
+    props: {
+      placeholder: '请选择日期'
+    },
+    _config: 'GDatePickerProps'
+  },
+  {
+    label: '日期范围',
+    tag: 'el-date-picker',
+    icon: 'date-picker',
+    props: {
+      startPlaceholder: '请选择起始日期',
+      endPlaceholder: '请选择结束日期',
+      type: 'daterange'
+    },
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '时间选择',
+    tag: 'el-date-picker',
+    icon: 'time-picker',
+    props: {
+      placeholder: '请选择时间',
+      type: 'datetime'
+    },
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '时间范围',
+    tag: 'el-date-picker',
+    icon: 'time-picker',
+    props: {
+      placeholder: '请选择时间',
+      type: 'datetimerange'
+    },
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '复选框',
+    tag: 'el-checkbox',
+    icon: 'checkbox',
+    props: {},
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '复选框组',
+    tag: 'el-checkbox-group',
+    icon: 'checkbox',
+    props: {
+      options: [
+        {
+          label: '选项一',
+          value: 'value1'
+        },
+        {
+          label: '选项二',
+          value: 'value2'
+        }
+      ]
+    },
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '单选框',
+    tag: 'el-radio',
+    icon: 'radio',
+    props: {
+      options: [
+        {
+          label: '选项一',
+          value: 'value1'
+        },
+        {
+          label: '选项二',
+          value: 'value2'
+        }
+      ]
+    },
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '评分',
+    tag: 'el-rate',
+    icon: 'rate',
+    props: {},
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '颜色选择',
+    tag: 'el-color-picker',
+    icon: 'color',
+    props: {},
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '开关',
+    tag: 'el-switch',
+    icon: 'switch',
+    props: {},
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '滑块',
+    tag: 'el-slider',
+    icon: 'slider',
+    props: {},
+    _config: 'GCascaderProps'
+  },
+  {
+    label: '上传',
+    tag: 'el-upload',
+    icon: 'upload',
+    props: {},
+    _config: 'GCascaderProps'
   }
 ]

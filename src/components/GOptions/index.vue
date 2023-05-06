@@ -20,13 +20,15 @@
 
 <script lang="ts" setup>
 import { remove } from 'lodash-es'
-import { useFormConfig } from '@/store'
 
-const { currentItem } = toRefs(useFormConfig())
+interface IOptions {
+  label: string
+  value: string
+}
+const props = defineProps<{ modelValue: IOptions[] }>()
 
-const options = computed(() => {
-  return currentItem.value.props.options
-})
+const options = useVModel(props, 'modelValue')
+
 function handleClick() {
   const len = options.value.length
   options.value.push({

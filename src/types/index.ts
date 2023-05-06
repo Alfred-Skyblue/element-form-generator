@@ -56,6 +56,9 @@ export interface IFormItem extends IAnyObject {
   labelWidth?: string
   // 表单组件属性
   props: IAnyObject
+  // 绑定的事件列表
+  on?: IAnyObject
+
   // 是否必填
   required?: boolean
   // 表单校验规则
@@ -80,7 +83,7 @@ export interface IFormItem extends IAnyObject {
   _config?: string
   // 表单栅格数
   span?: number
-
+  // 表单项的插槽
   _slots?: IAnyObject
 }
 
